@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucky Ali | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #0b0c2a;
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    nav a:hover {
+      color: #00bfff;
+      text-shadow: 0 0 10px #00bfff;
+    }
+    .download-cv {
+      background-color: #ff1493;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .download-cv:hover {
+      box-shadow: 0 0 15px #ff1493;
+    }
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 10%;
+      flex-wrap: wrap;
+    }
+    .profile-pic {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 25px #00bfff;
+      animation: float 3s ease-in-out infinite, glow 2s infinite ease-in-out;
+    }
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px #00bfff; }
+      50% { box-shadow: 0 0 40px #00bfff; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .intro {
+      max-width: 500px;
+    }
+    .intro h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .intro h2 span {
+      color: #00bfff;
+    }
+    .typing {
+      font-size: 22px;
+      color: #00bfff;
+      height: 30px;
+      overflow: hidden;
+      border-right: 2px solid #00bfff;
+      white-space: nowrap;
+      animation: typing 4s steps(22) infinite, blink 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      0% { width: 0; }
+      40% { width: 100%; }
+      60% { width: 100%; }
+      100% { width: 0; }
+    }
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #00bfff; }
+    }
+    .buttons button {
+      margin: 10px 10px 10px 0;
+      padding: 10px 20px;
+      border: 2px solid #00bfff;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .buttons button:hover {
+      background: #00bfff;
+      color: black;
+      box-shadow: 0 0 20px #00bfff;
+    }
+    .app-icons {
+      margin: 15px 0;
+    }
+    .app-icons img {
+      width: 35px;
+      height: 35px;
+      margin-right: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .app-icons img:hover {
+      filter: drop-shadow(0 0 10px #00bfff);
+    }
+    .stats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 10%;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .stat-box {
+      text-align: center;
+      position: relative;
+    }
+    .stat-box h3 {
+      font-size: 24px;
+      color: #00bfff;
+    }
+    .stat-box:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -30px;
+      transform: translateY(-50%);
+      height: 40px;
+      width: 1px;
+      background-color: #00bfff;
+    }
+    .button-content {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(0, 191, 255, 0.1);
+      border: 1px solid #00bfff;
+      border-radius: 8px;
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 🔁 Mobile Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      nav a, .download-cv {
+        margin: 5px 0;
+        display: inline-block;
+        font-size: 14px;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .intro h1 {
+        font-size: 24px;
+      }
+
+      .intro h2 {
+        font-size: 20px;
+      }
+
+      .typing {
+        font-size: 18px;
+      }
+
+      .profile-pic {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+      }
+
+      .app-icons img {
+        width: 30px;
+        height: 30px;
+        margin: 10px 5px;
+      }
+
+      .buttons button {
+        width: 100%;
+        margin: 5px 0;
+      }
+
+      .stats {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+      }
+
+      .stat-box:not(:last-child)::after {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2 style="color:white"><span style="color:#00bfff">Lucky Ali</span></h2>
+    <nav>
+      <a onclick="toggleContent('home')">Home</a>
+      <a onclick="toggleContent('about')">About</a>
+      <a onclick="toggleContent('skills')">Skills</a>
+      <a onclick="toggleContent('services')">Services</a>
+      <a onclick="toggleContent('projects')">Projects</a>
+      <a onclick="toggleContent('contact')">Contact</a>
+      <a class="download-cv" href="#" target="_blank">Download CV</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="profile-pic">
+      <img src="#" alt="Your pic">
+    </div>
+    <div class="intro">
+      <h1>Hello, I'm</h1>
+      <h2>Lucky Ali <br> And I'm a <span class="typing" id="skill"></span></h2>
+      <p>"I am the wisest man alive for knowing one thing that I know nothing."</p>
+      <div class="app-icons">
+        <a href="https://wa.me//">
+          <img src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000" alt="WhatsApp">
+        </a>
+        <img src="https://img.icons8.com/?size=100&id=ObCtn0GYNM6a&format=png&color=000000" alt="App 2">
+        <a href="#">
+          <img src="https://img.icons8.com/?size=100&id=tN8gey28ngcJ&format=png&color=000000" alt="Instagram">
+        </a>
+      </div>
+      <div class="buttons">
+        <button onclick="toggleContent('hire')">Hire Me</button>
+        <button onclick="toggleContent('contact')">Contact Me</button>
+      </div>
+      <div id="hireContent" class="button-content">
+        <p>I am not available for freelance or job right now</p>
+      </div>
+      <div id="contactContent" class="button-content">
+        <p>You can contact me via Gmail: <strong><a href="mailto: example@gmail.com" style="color: #ff1493;">my mail</a></strong><br>
+        or WhatsApp: <strong><a href="https://wa.me//" style="color: #ff1493;">Contact us</a></strong></p>
+      </div>
+
+      <div id="homeContent" class="button-content"><p>Welcome to my personal portfolio homepage. Here you can know more about me</p></div>
+      <div id="aboutContent" class="button-content"><p>I am Lucky Ali, a professional web and app developer. Also i can write script with Python</p></div>
+      <div id="skillsContent" class="button-content"><p>HTML, CSS, js, C , Dart, Flutter, full stack development with hosting, firebase db, VS Code, Python and pursuing engineering at G.P Sitamarhi , Also i have a business skill</p></div>
+      <div id="servicesContent" class="button-content"><p>I can't provide service as a Freelancer. But in partnership i will make app and website (Full stack) and write a script with python</p></div>
+      <div id="projectsContent" class="button-content"><a href="projects.html" style="text-decoration: none; color: #ff1493">Click here to see all projects </a> </p></div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-box">
+      <h3>1</h3>
+      <p>Years of Experience</p>
+    </div>
+    <div class="stat-box">
+      <h3>30+</h3>
+      <p>Projects Completed</p>
+    </div>
+    <div class="stat-box">
+      <h3>5+</h3>
+      <p>Technologies Mastered</p>
+    </div>
+    <div class="stat-box">
+      <h3>10+</h3>
+      <p>Successful working projects</p>
+    </div>
+  </div>
+  <br>
+  <br>
+  <hr>
+  <br>
+  <center>
+  <footer>&copy;<a href="https://www.linkedin.com/in/lucky-ali-131-eh" style="text-decoration: none; color: white;">LuckyAli</a>, All right reserved, 2025</footer>
+  </center>
+  <script>
+    const skills = ["Web Developer", "App Developer", "Founder of NexMise", "Freelancer"];
+    let i = 0;
+    let skillSpan = document.getElementById("skill");
+
+    function typeSkill() {
+      let word = skills[i];
+      let j = 0;
+      skillSpan.textContent = "";
+
+      let type = setInterval(() => {
+        skillSpan.textContent += word[j];
+        j++;
+        if (j >= word.length) {
+          clearInterval(type);
+          setTimeout(() => eraseSkill(word), 1500);
+        }
+      }, 100);
+    }
+
+    function eraseSkill(word) {
+      let j = word.length;
+      let erase = setInterval(() => {
+        skillSpan.textContent = word.substring(0, j - 1);
+        j--;
+        if (j === 0) {
+          clearInterval(erase);
+          i = (i + 1) % skills.length;
+          setTimeout(typeSkill, 500);
+        }
+      }, 50);
+    }
+
+    typeSkill();
+
+    function toggleContent(type) {
+      const ids = ["hireContent", "contactContent", "homeContent", "aboutContent", "skillsContent", "servicesContent", "projectsContent"];
+      ids.forEach(id => {
+        const elem = document.getElementById(id);
+        if (id.toLowerCase().includes(type.toLowerCase())) {
+          elem.style.display = elem.style.display === "block" ? "none" : "block";
+        } else {
+          elem.style.display = "none";
+        }
+      });
+    }
+
+
+  </script>
+</body>
+</html>
